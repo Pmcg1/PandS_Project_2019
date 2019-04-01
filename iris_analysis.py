@@ -6,6 +6,7 @@
 # Import numpy and pandas for analysis
 import numpy as np
 import pandas as pd
+import matplotlib.pyplot as plt
 
 
 f = pd.read_csv('iris.csv') # Import csv file using pandas
@@ -20,3 +21,12 @@ df = pd.DataFrame(f) # Create a dataframe from the csv data
 #print(f"Petal Width: Max={df['petal_width'].max()} Min={df['petal_width'].min()} Mean={round(df['petal_width'].mean(),2)} Median={df['petal_width'].median()} StDev={round(df['petal_width'].std(),2)}")
 
 print(round(df.describe(percentiles=[]),3)) # Summary statistics, rounded to 3 decimal places
+
+
+df.plot(kind='box', subplots=True, layout=(2,2), grid = True) # Display box plots
+df.plot(kind='hist', subplots=True, layout=(2,2), sharex=False, grid = True) # Display histograms
+
+plt.show()
+
+# Edit to include scatter plot (and others?)
+# Arrange all plots as subplots on one output

@@ -9,8 +9,17 @@
 ### Literature Review and Interesting Previous Analyses
 
 ### Issues and Inconsistencies with Dataset
-* Line 35
-* Line 38
+It is noted that there are three inconsistencies between the dataset sourced from ****LINK**** and the dataset presented by Fisher ****LINK****:
+
+1. 35th sample: the fourth feature is given as "0.1" where Fisher had originally given "0.2".
+2. 38th sample: the second feature is given as "3.1" where Fisher had originally given "3.6".
+3. 38th sample: the third feature is given as "1.5" where Fisher had originally given "1.4".
+
+These three errors have an effect on the analysis of the dataset as follows:
+
+
+TBC
+
 
 
 ## License

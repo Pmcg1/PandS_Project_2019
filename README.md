@@ -4,6 +4,22 @@
 ## Introduction
 
 ### Background
+The data analysed by this programme is the "Iris Flower Data Set". R.A. Fisher collated and presented the data set in 1936 in his paper "The Use of Multiple Measurements in Taxonomic Problems". In this paper he studied the use of linear combinations of multiple characterising features of a species to discriminate it from related species. Fisher studied three related species of iris flowers in this paper:
+* Iris setosa
+* Iris versicolor
+* Iris virginica
+
+Fifty samples of each species was analysed, with the data for Iris setosa and Iris versicolor having been provided by his then-colleague, Botanist Edgar Anderson, from a study of a single colony.
+
+Fisher studied two features of the iris flowers:
+* Petals: the brightly coloured and generally larger parts of the flower
+* Sepals: generally smaller and green coloured parts of the flower
+
+Using these, he analysed four characteristics of each species:
+* Petal Length
+* Petal Width
+* Sepal Length
+* Sepal Width
 
 
 ### Literature Review and Interesting Previous Analyses

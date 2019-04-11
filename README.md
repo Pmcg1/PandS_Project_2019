@@ -71,3 +71,4 @@ Others?
 (https://www.kaggle.com/jchen2186/machine-learning-with-iris-dataset)
 (https://medium.com/codebagng/basic-analysis-of-the-iris-data-set-using-python-2995618a6342)
 (https://towardsdatascience.com/a-guide-to-pandas-and-matplotlib-for-data-exploration-56fad95f951c)
+(https://medium.com/@rayheberer/generating-matplotlib-subplots-programmatically-cc234629b648)

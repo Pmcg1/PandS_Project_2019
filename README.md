@@ -11,11 +11,7 @@ The data analysed by this programme is the "Iris Flower Data Set". R.A. Fisher c
 
 Fifty samples of each species was analysed, with the data for Iris setosa and Iris versicolor having been provided by his then-colleague, Botanist Edgar Anderson, from a study of a single colony.
 
-Fisher studied two features of the iris flowers:
-* Petals: the brightly coloured and generally larger parts of the flower
-* Sepals: generally smaller and green coloured parts of the flower
-
-Using these, he analysed four characteristics of each species:
+Fisher studied four characteristics of each species:
 * Petal Length
 * Petal Width
 * Sepal Length
@@ -49,7 +45,7 @@ This project is licensed under the Apache License 2.0 - see [LICENSE.md](LICENSE
 ### Libraries Used
 
 * Numpy
-* Pandas
+* Pandas (including scattermatrix)
 * Matplotlib
 
 Others?
@@ -63,6 +59,8 @@ Others?
 
 ### Plots and Charts
 * Boxplots
+* Histograms
+* Scatterplots
 
 ## References
 (http://archive.ics.uci.edu/ml/datasets/Iris)

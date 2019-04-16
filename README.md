@@ -72,3 +72,5 @@ Others?
 (https://medium.com/codebagng/basic-analysis-of-the-iris-data-set-using-python-2995618a6342)
 (https://towardsdatascience.com/a-guide-to-pandas-and-matplotlib-for-data-exploration-56fad95f951c)
 (https://medium.com/@rayheberer/generating-matplotlib-subplots-programmatically-cc234629b648)
+(https://www.kaggle.com/rakesh6184/seaborn-plot-to-visualize-iris-data)
+https://stackoverflow.com/questions/23969619/plotting-with-seaborn-using-the-matplotlib-object-oriented-interface

@@ -5,41 +5,78 @@
 
 # Import numpy and pandas for analysis
 import numpy as np
+from scipy import stats
 import pandas as pd
 from pandas.plotting import scatter_matrix
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-
+# Importing and preparing data
 f = pd.read_csv('iris.csv') # Import csv file using pandas
 
 df = pd.DataFrame(f) # Create a dataframe from the csv data
 
+# General analysis of contents of dataset
 speciesList = df['species'].unique() # Extract unique species from species column
-print(f'Species included are: {speciesList}',"\n") # Update to print without list format
+print('Species included in this dataset are: ')
+for i in speciesList:
+    print ('* ', i)
+print()
 
-# print(df)
+print('Information about the imported dataset: ')
+print(df.info(verbose=True, memory_usage=False, null_counts=False),'\n')
 
-print(df.info(),"\n")
-print(df['species'].value_counts(),"\n")
+print('Records for each species:')
+print(df['species'].value_counts(),'\n')
 
-print('Sample of data: ',"\n")
-print(df.head(),"\n")
+print('Sample of data (First 5 records):')
+print(df.head(n=5),'\n')
 
-print("Summary statistics for entire dataset:")
+print('Sample of data (Random 5 records):')
+print(df.sample(n=5),'\n')
+
+print("Summary statistics for the dataset:")
 print(round(df.describe(percentiles=[]),3),'\n') # Summary statistics, rounded to 3 decimal places
 
-#def splitDataset(df, i):
-#   subdf = df.loc[df['species'] == i]
-#    print("Dataset created for: ", i)
-#    return subdf
 
-#print(splitDataset(df,'setosa'))
+
+# Statistical Analysis of Dataset by Species
+
+#print(setosaSet.loc[:,'sepal_width'])
+
+
+
+def speciesStats(species):
+   print(f'Detailed statistical analysis for species: {species.iloc[0,4]}')  
+   measColumns = species.columns[0:4]
+   statDF = pd.DataFrame(data = None, columns = measColumns, index = ['Min', 'Max', 'Median', 'Variance', 'StDev', 'Skewness', 'Kurtosis'])
+
+   for i in measColumns:
+      column = species.loc[:,i]
+      columnDict =	{
+         "Min": np.min(column),
+         "Max": np.max(column),
+         "Median": np.median(column),
+         "Mean": round(np.mean(column),3),
+         "Variance": round(np.var(column),3),
+         "StDev": round(np.std(column),3),
+         "Skewness": round(stats.skew(column),3),
+         "Kurtosis": round(stats.kurtosis(column),3)
+      }
+      statDF[i].update(pd.Series(columnDict))
+   print(statDF, '\n')
+
+for i in speciesList:
+   speciesDF = df.query("species == @i")
+   speciesStats(speciesDF)
+
 
 # Create species-specific datasets
-setosaSet = df.query("species == 'setosa'")
-versiSet = df.query("species == 'versicolor'")
-virgiSet = df.query("species == 'virginica'")
+#setosaSet = df.query("species == 'setosa'")
+#versiSet = df.query("species == 'versicolor'")
+#virgiSet = df.query("species == 'virginica'")
+
+
 
 #for i in speciesList:
     #print(f'List of data for species: {i}')
@@ -53,7 +90,7 @@ virgiSet = df.query("species == 'virginica'")
 #fig, axes = plt.subplots(nrows=2, ncols=2)
 #fig.suptitle('Boxplots')
 
-
+'''
 # Set style for Seaborn plots below
 sns.set(style='darkgrid')
 
@@ -93,3 +130,4 @@ plt.show()
 
 # Edit to include scatter plot (and others?)
 # Arrange all plots as subplots on one output
+'''

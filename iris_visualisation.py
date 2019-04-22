@@ -21,16 +21,42 @@ versiSet = df.query("species == 'versicolor'")
 virgiSet = df.query("species == 'virginica'")
 
 # Set style for Seaborn plots below
-sns.set(style='darkgrid')
-
+sns.set(style='darkgrid', palette='colorblind')
+'''
 # Box and whisker plots
 f, axes = plt.subplots(1, 4, sharey=False, figsize=(10, 8))
-
 sns.boxplot(x='species',y='sepal_length',data=df, ax=axes[0])
 sns.boxplot(x='species',y='sepal_width', data=df, ax=axes[1])
 sns.boxplot(x='species',y='petal_length', data=df, ax=axes[2])
 sns.boxplot(x='species',y='petal_width', data=df, ax=axes[3])
+'''
+'''
+# Violin plots
+f, axes = plt.subplots(1, 4, sharey=False, figsize=(10, 8))
+sns.violinplot(x='species',y='sepal_length',data=df, ax=axes[0])
+sns.violinplot(x='species',y='sepal_width', data=df, ax=axes[1])
+sns.violinplot(x='species',y='petal_length', data=df, ax=axes[2])
+sns.violinplot(x='species',y='petal_width', data=df, ax=axes[3])
+'''
 
+# Pairplot
+sns.pairplot(hue='species', data=df, diag_kind='hist', markers=["+", "^", "o"])
+plt.show()
+
+# Lmplot
+g = sns.lmplot(x="sepal_length", y="sepal_width", hue="species", truncate=False, height=5, data=df)
+g.set_axis_labels("Sepal length (mm)", "Sepal width (mm)")
+
+g = sns.lmplot(x="petal_length", y="petal_width", hue="species", truncate=False, height=5, data=df)
+g.set_axis_labels("Petal length (mm)", "Petal width (mm)")
+
+plt.show()
+
+# Distplot for sepal length, could expand to cover all 4 variables with a loop, also display on facet grid?
+sns.distplot(setosaSet['sepal_length'], rug=True)
+sns.distplot(versiSet['sepal_length'], rug=True)
+sns.distplot(virgiSet['sepal_length'], rug=True)
+plt.show()
 
 
 #plt.figlegend()
@@ -39,11 +65,12 @@ sns.boxplot(x='species',y='petal_width', data=df, ax=axes[3])
 #Figure-level interface for drawing categorical plots onto a FacetGrid. (catplot)
 
 
-plt.show()
+
 
 #df.drop("Id", axis=1).boxplot(by="species", figsize=(10, 10))
 #plt.show()
 
+# Add histograms with kde?
 
 '''
 g = sns.FacetGrid(df, col="species")

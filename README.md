@@ -291,17 +291,17 @@ Two separate python programmes have been written for investigation of the data s
 ##### Statistics for Virginica  
 
 >Detailed statistical analysis for species: virginica  
->_           | sepal_length | sepal_width | petal_length | petal_width
->----------- | ------------ | ----------- | ------------ | -----------
->Min         |      4.9     |     2.2     |      4.5     |     1.4
->Max         |      7.9     |     3.8     |      6.9     |     2.5  
->Median      |      6.5     |       3     |     5.55     |       2  
->Mean        |    6.588     |   2.974     |    5.552     |   2.026  
->Variance    |    0.396     |   0.102     |    0.298     |   0.074  
->StDev       |    0.629     |   0.319     |    0.546     |   0.272  
->Range       |        3     |     1.6     |      2.4     |     1.1  
->Skewness    |    0.114     |   0.355     |    0.533     |  -0.126  
->Kurtosis    |   -0.088     |    0.52     |   -0.256     |  -0.661  
+>|            | sepal_length | sepal_width | petal_length | petal_width |
+>|----------- | ------------ | ----------- | ------------ | ----------- |
+>|Min         |      4.9     |     2.2     |      4.5     |     1.4     |
+>|Max         |      7.9     |     3.8     |      6.9     |     2.5     |
+>|Median      |      6.5     |       3     |     5.55     |       2     |
+>|Mean        |    6.588     |   2.974     |    5.552     |   2.026     |
+>|Variance    |    0.396     |   0.102     |    0.298     |   0.074     |
+>|StDev       |    0.629     |   0.319     |    0.546     |   0.272     |
+>|Range       |        3     |     1.6     |      2.4     |     1.1     |
+>|Skewness    |    0.114     |   0.355     |    0.533     |  -0.126     |
+>|Kurtosis    |   -0.088     |    0.52     |   -0.256     |  -0.661     |
 
 ### Plots
 

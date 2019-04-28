@@ -18,6 +18,7 @@
 - [Results](#Results)
     - [Data and Tables Output](#Data-and-Tables-Output)
     - [Plots](#Plots)
+- [Conclusions](#Conclusions)   
 - [References](#References)
 <!-- /TOC -->  
 
@@ -69,7 +70,7 @@ The data set has several characteristics that render it useful for machine learn
 - The Iris-setosa class is linearly separable from the other classes
 - The Iris-versicolor and Iris-virginica classes are not linearly separable from each other
 - It contains only 150 rows and 5 columns, therefore processing time for algorithms is relatively small
-- The data set is made up of real data, made from careful observations by an expert - it has not been synthesised and can therefore be considered a fair representatino of the real world
+- The data set is made up of real data, made from careful observations by an expert - it has not been synthesised and can therefore be considered a fair representation of the real world
 
 Linear separability is an interesting in relation to the dataset, as the setosa observations can be easily distinguished from the versicolor and virginica observations<sup>[4](#myfootnote4)</sup>.
 
@@ -89,7 +90,7 @@ In keeping with the known characteristics of the data set, all algorithms explor
 
 #### Basic Analysis of the Iris Data set Using Python - Oluwasogo Oluwafemi Ogundowole
 
-Oluwasogo Oluwafemi Ogundowole demonstrates the use of pandas for managementn of the iris data set on Medium<sup>[6](#myfootnote6)</sup> and explores the tools of the [scikit-learn package](https://scikit-learn.org/stable/) (sklearn). He provides some basic viaualisations using matplotlib also.
+Oluwasogo Oluwafemi Ogundowole demonstrates the use of pandas for management of the iris data set on Medium<sup>[6](#myfootnote6)</sup> and explores the tools of the [scikit-learn package](https://scikit-learn.org/stable/) (sklearn). He provides some basic viaualisations using matplotlib also.
 
 The approach taken is to compare the following algorithms for machine learning:
 
@@ -129,7 +130,7 @@ It is noted that there are three inconsistencies between the data set sourced fr
 2. 38th sample: the second feature is given as "3.1" where Fisher had originally given "3.6".
 3. 38th sample: the third feature is given as "1.5" where Fisher had originally given "1.4".
 
-These three errors have not been rectified in the dataset analysed.
+These three errors have not been rectified in the data set analysed.
 
 ## License
 
@@ -678,6 +679,16 @@ Output plot:
 
 As with the previous plots, setosa can be clearly distinguished from versicolor and virginica from each subplot. This is particularly apparent for the petal ;ength and width. Some significant overlap of the versicolor and virginica data sets can be seen, however it is clear that in many cases it would be possibly to classify new observations as the overlap is not 100%.
 
+## Conclusions
+
+The statistical analysis carried out is supperted and enhanced by the visualisations generated. This supports the general conclusion of the literature and previous projects studied - the Iris Flower Data Set is a suitable tool for development and training of machine learning algorithms due to its characteristics:
+
+- The setosa class is linearly separable from the others
+- The versicolor and virginica classes are not linearly separable from each other
+- It is small enough to be easily provessed but large enough to provide a suitable sample size of data for training
+
+These characteristics ensure that machine learning algorithms can efficiently be trained and tested with the data set.
+
 ## References
 
 <a name="myfootnote1">1</a>: UCI Machine Learning Repository - Iris Data Set, http://archive.ics.uci.edu/ml/datasets/Iris  
@@ -685,15 +696,15 @@ As with the previous plots, setosa can be clearly distinguished from versicolor 
 <a name="myfootnote3">3</a>: emerj.com, What is Machine Learning?, https://emerj.com/ai-glossary-terms/what-is-machine-learning/  
 <a name="myfootnote4">4</a>: A Multithreaded Software Model for Backpropagation Neural Network Applications, 2.4.1 Linear Separability and the XOR Problem, http://www.ece.utep.edu/research/webfuzzy/docs/kk-thesis/kk-thesis-html/node19.html  
 <a name="myfootnote5">5</a>: Exploring the Iris Dataset, https://medium.com/@livingwithdata/exploring-the-iris-dataset-260cc1e5cdf7  
-<a name="myfootnote5">6</a>: Basic Analysis of the Iris Data set Using Python, https://medium.com/codebagng/basic-analysis-of-the-iris-data-set-using-python-2995618a6342  
-<a name="myfootnote5">7</a>: Seaborn plot to visualize Iris data, https://www.kaggle.com/rakesh6184/seaborn-plot-to-visualize-iris-data  
-<a name="myfootnote5">8</a>: Machine Learning with Iris Dataset, https://www.kaggle.com/jchen2186/machine-learning-with-iris-dataset  
-<a name="myfootnote5">9</a>: Statistics Canada - Variance and Standard Deviation, https://www150.statcan.gc.ca/n1/edu/power-pouvoir/ch12/5214891-eng.htm  
-<a name="myfootnote5">10</a>: NIST - Measures of Skewness and Kurtosis, https://www.itl.nist.gov/div898/handbook/eda/section3/eda35b.htm  
-<a name="myfootnote5">11</a>: An introduction to kernel density estimation, http://www.mvstat.net/tduong/research/seminars/seminar-2001-05/  
-<a name="myfootnote5">12</a>: Pandas - Getting Started in 10 minutes, https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html  
-<a name="myfootnote5">13</a>: Official seaborn tutorial, https://seaborn.pydata.org/tutorial.html  
-<a name="myfootnote5">14</a>: Generating Matplotlib Subplots Programmatically, https://medium.com/@rayheberer/generating-matplotlib-subplots-programmatically-cc234629b648  
-<a name="myfootnote5">15</a>: 5 Reasons You Should Use a Violin Graph, https://blog.bioturing.com/2018/05/16/5-reasons-you-should-use-a-violin-graph/  
-<a name="myfootnote5">16</a>: Plotting with seaborn using the matplotlib object-oriented interface, Stackoverflow, https://stackoverflow.com/questions/23969619/plotting-with-seaborn-using-the-matplotlib-object-oriented-interface  
-<a name="myfootnote5">17</a>: A Guide to Pandas and Matplotlib for Data Exploration, https://towardsdatascience.com/a-guide-to-pandas-and-matplotlib-for-data-exploration-56fad95f951c  
+<a name="myfootnote6">6</a>: Basic Analysis of the Iris Data set Using Python, https://medium.com/codebagng/basic-analysis-of-the-iris-data-set-using-python-2995618a6342  
+<a name="myfootnote7">7</a>: Seaborn plot to visualize Iris data, https://www.kaggle.com/rakesh6184/seaborn-plot-to-visualize-iris-data  
+<a name="myfootnote8">8</a>: Machine Learning with Iris Dataset, https://www.kaggle.com/jchen2186/machine-learning-with-iris-dataset  
+<a name="myfootnote9">9</a>: Statistics Canada - Variance and Standard Deviation, https://www150.statcan.gc.ca/n1/edu/power-pouvoir/ch12/5214891-eng.htm  
+<a name="myfootnote10">10</a>: NIST - Measures of Skewness and Kurtosis, https://www.itl.nist.gov/div898/handbook/eda/section3/eda35b.htm  
+<a name="myfootnote11">11</a>: An introduction to kernel density estimation, http://www.mvstat.net/tduong/research/seminars/seminar-2001-05/  
+<a name="myfootnote12">12</a>: Pandas - Getting Started in 10 minutes, https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html  
+<a name="myfootnote13">13</a>: Official seaborn tutorial, https://seaborn.pydata.org/tutorial.html  
+<a name="myfootnote14">14</a>: Generating Matplotlib Subplots Programmatically, https://medium.com/@rayheberer/generating-matplotlib-subplots-programmatically-cc234629b648  
+<a name="myfootnote15">15</a>: 5 Reasons You Should Use a Violin Graph, https://blog.bioturing.com/2018/05/16/5-reasons-you-should-use-a-violin-graph/  
+<a name="myfootnote16">16</a>: Plotting with seaborn using the matplotlib object-oriented interface, Stackoverflow, https://stackoverflow.com/questions/23969619/plotting-with-seaborn-using-the-matplotlib-object-oriented-interface  
+<a name="myfootnote17">17</a>: A Guide to Pandas and Matplotlib for Data Exploration, https://towardsdatascience.com/a-guide-to-pandas-and-matplotlib-for-data-exploration-56fad95f951c  

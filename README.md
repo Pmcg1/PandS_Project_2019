@@ -16,7 +16,7 @@
     - [Implementation](#Implementation)
     - [Investigations and Analysis](#Investigations-and-Analysis)
 - [Results](#Results)
-    - [Tables](#Tables)
+    - [Data and Tables Output](#Data-and-Tables-Output)
     - [Plots](#Plots)
 - [References](#References)
 <!-- /TOC -->  
@@ -171,32 +171,66 @@ Once the correct version of Python has been installed, running either of the inc
 
 Please note that the programmes will not run successfuly if their required libraries are not installed.
 
-### Implementation
+## Implementation and Results
 
-Two separate python programmes have been written for investigation of the data set. These are discussed below.
+Two separate python programmes have been written for this project:
 
-[iris_analysis.py](iris_analysis.py): This 
+- [iris_analysis.py](iris_analysis.py): This is for carrying out general and statistical analysis of the data. It outputs results to the command line.
+- [iris_visualisation.py](iris_visualisation.py): This is for creation of visualisations of the data set. It outputs plots to the folder the programme is stored in.
 
+### Data and Tables Output
 
-[iris_visualisation.py](iris_visualisation.py): This
+Code samples are included in the following sections and explained. For clarity, comments have been removed, but these can be viewed in the included python programmes.
 
+This section referes primarily to the programme [iris_analysis.py](iris_analysis.py).
 
-### Investigations and Analysis
+#### General Analysis
 
-## Results
+##### Data Import and Preparation
 
-### Tables
+Pandas is used to import the data from csv (pandas.read_csv), and then convert it to a dataframe.
 
-#### Data and Tables Output
+This is implemented as follows:
+
+``` Python
+f = pd.read_csv('iris.csv')
+df = pd.DataFrame(f)
+```
+
+This code is reused in the [iris_visualisation.py](iris_visualisation.py) programme.
 
 ##### Unique Species
+
+The following python code is used to extract unique species from the dataset and print them iteratively: 
+
+``` Python
+speciesList = df['species'].unique()
+print('Species included in this dataset are: ')
+for i in speciesList:
+    print ('* ', i)
+print()
+```
+
+This generates the following output:
+
+```
 Species included in this dataset are:
 *  setosa
 *  versicolor
 *  virginica
+```
 
 ##### Dataset Info
 
+Pandas dataframe.info command is used to output selected information about the structure of the dataset.
+
+``` Python
+print('Information about the imported dataset: ')
+print(df.info(verbose=True, memory_usage=False, null_counts=False),'\n')
+```
+
+Output:
+```
 Information about the imported dataset:
 
 <class 'pandas.core.frame.DataFrame'>|_
@@ -209,65 +243,160 @@ petal_length |   float64
 petal_width  |   float64
 species      |   object
 dtypes: | float64(4), object(1)None
+```
 
 ##### Records for Each Species
 
+Pandas series.value_counts command is used to output the number of records relating to each species.
+
+``` Python
+print('Records for each species:')
+print(df['species'].value_counts(),'\n')
+```
+
+Output:
+
+```
 Records for each species:|_
 -----------|-----
 virginica  |  50
 versicolor |   50
 setosa     |   50
 Name: species, dtype: int64
+```
 
 ##### Sample of Data (Head)
 
+Two examples of sampling the data and presenting it to the user are used. The first example uses pandas dataframe.head with the count set to 5, to output the first five records in the dataframe.
+
+``` Python
+print('Sample of data (First 5 records):')
+print(df.head(n=5),'\n')
+```
+
+Output table:
+
+```
 Sample of data (First 5 records):
 
 _   | sepal_length | sepal_width | petal_length | petal_width | species
---- | ------------ | ----------- | ------------ | ----------- | -------
+--- | :----------: | :---------: | :----------: | :---------: | -------:
 0   |     5.1      |     3.5     |     1.4      |     0.2     | setosa
 1   |     4.9      |     3.0     |     1.4      |     0.2     | setosa
 2   |     4.7      |     3.2     |     1.3      |     0.2     | setosa
 3   |     4.6      |     3.1     |     1.5      |     0.2     | setosa
 4   |     5.0      |     3.6     |     1.4      |     0.2     | setosa
+```
 
 ##### Sample of Data (Random)
 
+Similarly to the previous section, pandas dataframe.sample is used to out a random five records from the dataframe.
+
+``` Python
+print('Sample of data (Random 5 records):')
+print(df.sample(n=5),'\n')
+```
+
+Output table:
+
+```
 Sample of data (Random 5 records):
 
 _   | sepal_length | sepal_width | petal_length | petal_width | species
---- | ------------ | ----------- | ------------ | ----------- | -------
+--- | :----------: | :---------: | :----------: | :---------: | -------:
 129 |     7.2      |     3.0     |     5.8      |     1.6     | virginica
 74  |     6.4      |     2.9     |     4.3      |     1.3     | versicolor
 126 |     6.2      |     2.8     |     4.8      |     1.8     | virginica
 127 |     6.1      |     3.0     |     4.9      |     1.8     | virginica
 2   |     4.7      |     3.2     |     1.3      |     0.2     | setosa
-
-
-
-
+```
 
 #### Statistical Analysis
 
 ##### Statistics for Entire Dataset
 
+Pandas dataframe.describe function is used to extract some basic summary statistics from the dataframe and display to the screen.
+
+``` Python
+print("Summary statistics for the dataset:")
+print(round(df.describe(percentiles=[]),3),'\n')
+```
+
+This outputs the following table:
+
+```
 Summary statistics for the dataset
 
 _           | sepal_length | sepal_width | petal_length | petal_width
------------ | ------------ | ----------- | ------------ | -----------
+----------- | :----------: | :---------: | :----------: | :---------:
 count       |   150.000    |   150.000   |   150.000    |   150.000
 mean        |     5.843    |     3.054   |     3.759    |     1.199
 std         |     0.828    |     0.434   |     1.764    |     0.763
 min         |     4.300    |     2.000   |     1.000    |     0.100
 50%         |     5.800    |     3.000   |     4.350    |     1.300
 max         |     7.900    |     4.400   |     6.900    |     2.500
+```
 
-##### Statistics for Setosa
+##### Statistics for Each Species
 
+In order to extract more detailed statistics from the dataframe it was necessary to write a more complex function (speciesStats). This iterates through the sepal_length, sepal_width, petal_length and petal_width columns and applies a number of Numpy and Scipy functions to extract statistics:
+
+- Minimum (min): numpy.min is applied to the column to select the lowest value
+- Maximum (max): numpy.max is applied to the column to select the highest value
+- Median: numpy.median is applied to the column to select the middle value
+- Average (mean): numpy.mean is applied to the column to calculate the average, this is returned rounded to 3 decimal places
+- Variance (var): numpy.var is applied to the column to calculate the variance (spread of the data)<sup>[9](#myfootnote9)</sup>, this is returned rounded to 3 decimal places
+- Standard Deviation (StDev): numpy.std is applied to the column to calculate the standard deviation (spread around the mean)<sup>[9](#myfootnote9)</sup>, this is returned rounded to 3 decimal places
+- Range: The difference between numpy.min and numpy.max gives the range of data in the column
+- Skewness: scipy.stats.skew is applied to the column to calculate the skewness (measure of lack of symmetry)<sup>[10](#myfootnote10)</sup>, this is returned rounded to 3 decimal places
+- Kurtosis: scipy.stats.kurtosis is applied to the column to calculate the kurtosis (measure of tailed-ness of data)<sup>[10](#myfootnote10)</sup>, this is returned rounded to 3 decimal places
+
+The python function, as shown below, does the following:
+
+1. Extracts the first 4 columns from the dataset provided, ignoring the last (species) column.
+2. Builds an empty dataframe (statDF) with the columns generated in step 1 and using as indices the statistical functions listed above.
+3. Runs through a "for loop" once for each column, created a "dict" that assigns the statistical results to the keys listed.
+4. Updates the statDF dataframe with the relevant values for the column.
+5. Prints the dataframe contents.
+
+```Python
+def speciesStats(species): 
+   print(f'Detailed statistical analysis for species: {species.iloc[0,4]}')
+   measColumns = species.columns[0:4]
+   statDF = pd.DataFrame(data = None, columns = measColumns, index = ['Min', 'Max', 'Median', 'Mean', 'Variance', 'StDev', 'Range', 'Skewness', 'Kurtosis']) 
+
+   for i in measColumns:
+      column = species.loc[:,i]
+      columnDict =	{ 
+         "Min": np.min(column),
+         "Max": np.max(column),
+         "Median": np.median(column),
+         "Mean": round(np.mean(column),3),
+         "Variance": round(np.var(column),3),
+         "StDev": round(np.std(column),3),
+         "Range": (np.max(column)-np.min(column)),
+         "Skewness": round(stats.skew(column),3),
+         "Kurtosis": round(stats.kurtosis(column),3)
+      }
+      statDF[i].update(pd.Series(columnDict))
+   print(statDF, '\n')
+```
+
+Calling the function is achieved through a "for loop" that iterates through the previously generated species list.
+
+``` Python
+for i in speciesList:
+   speciesDF = df.query("species == @i")
+   speciesStats(speciesDF)
+```
+
+The three output tables are as follows:
+
+```
 Detailed statistical analysis for species: setosa
 
 _           | sepal_length | sepal_width | petal_length | petal_width
------------ | ------------ | ----------- | ------------ | -----------
+----------- | :----------: | :---------: | :----------: | :---------:
 Min         |      4.3     |     2.3     |        1     |     0.1  
 Max         |      5.8     |     4.4     |      1.9     |     0.6  
 Median      |        5     |     3.4     |      1.5     |     0.2  
@@ -277,13 +406,13 @@ StDev       |    0.349     |   0.377     |    0.172     |   0.106
 Range       |      1.5     |     2.1     |      0.9     |     0.5  
 Skewness    |    0.116     |   0.104     |     0.07     |   1.161  
 Kurtosis    |   -0.346     |   0.685     |    0.814     |   1.296  
+```
 
-##### Statistics for versicolor
-
+```
 Detailed statistical analysis for species: versicolor
 
 _           | sepal_length | sepal_width | petal_length | petal_width
------------ | ------------ | ----------- | ------------ | -----------
+----------- | :----------: | :---------: | :----------: | :---------:
 Min         |      4.9     |       2     |        3     |       1  
 Max         |        7     |     3.4     |      5.1     |     1.8  
 Median      |      5.9     |     2.8     |     4.35     |     1.3  
@@ -293,13 +422,13 @@ StDev       |    0.511     |   0.311     |    0.465     |   0.196
 Range       |      2.1     |     1.4     |      2.1     |     0.8  
 Skewness    |    0.102     |  -0.352     |   -0.588     |   -0.03  
 Kurtosis    |   -0.599     |  -0.448     |   -0.074     |  -0.488  
+```
 
-##### Statistics for Virginica  
-
+```
 Detailed statistical analysis for species: virginica  
 
 _           | sepal_length | sepal_width | petal_length | petal_width
------------ | ------------ | ----------- | ------------ | -----------
+----------- | :----------: | :---------: | :----------: | :---------:
 Min         |      4.9     |     2.2     |      4.5     |     1.4
 Max         |      7.9     |     3.8     |      6.9     |     2.5  
 Median      |      6.5     |       3     |     5.55     |       2  
@@ -309,8 +438,48 @@ StDev       |    0.629     |   0.319     |    0.546     |   0.272
 Range       |        3     |     1.6     |      2.4     |     1.1  
 Skewness    |    0.114     |   0.355     |    0.533     |  -0.126  
 Kurtosis    |   -0.088     |    0.52     |   -0.256     |  -0.661  
+```
 
 ### Plots
+
+This section referes primarily to the programme [iris_visualisation.py](iris_visualisation.py).
+
+All plots are saved to the folder that this programme is stored in, in .png format. Please take care when generating plots as any existing plots in the folder will be overwritten.
+
+To avoid repetition and hard-coding, all plots are generated via "for loop"s.
+
+#### Data Preparation
+
+The data is imported to the programme in the same manner as [iris_analysis.py](iris_analysis.py).
+
+Following this a number of perparatory steps are taken:
+
+1. Three dataframes are created as subsets of the overall dataframe, one for each species:
+
+``` Python
+setosaSet = df.query("species == 'setosa'")
+versiSet = df.query("species == 'versicolor'")
+virgiSet = df.query("species == 'virginica'")
+```
+
+2. Three variables are generated for use throughout the programme:
+
+- dfCols: A list of the columns in the dataframe df excluding the species columns
+- n: The number of columns in dfCols (4)
+- dfLabels: A list of axis titles for graphs including units to replace the column headings
+
+``` Python
+dfCols = list(df.iloc[:, :-1])
+n=len(dfCols)
+dfLabels = ["Sepal Length (cm)", "Sepal Width (cm)", "Petal Length (cm)", "Petal Width (cm)"]
+```
+
+3. Global styles are set for Seaborn plots:
+
+``` Python
+sns.set(style='darkgrid')
+sns.set_palette("colorblind",3)
+```
 
 #### Box & Whisker Plots
 
@@ -322,11 +491,38 @@ Box & Whisker plots display a "five number summary" of data as follows:
 
 Additionally, outliers (if present) can be shown by points beyond the extreme value lines.
 
-The limitation of this type of plot is that it does not show the Kernal Density Estimate (KDE) of observations.
+The limitation of this type of plot is that it does not show the Kernal Density Estimate (KDE)<sup>[11](#myfootnote11)</sup> of observations.
+
+This is generated via an "axes-level" plot in Seaborn. The format is 2x2 to display each variable in a square grid.
+A "for loop" cycles through the axes (explicitly declared), creates a boxplot for the variable and labels it appropriately from the dfLabels list. An object-oriented approach "g = " is used in creation of each boxplot for ease of use in attaching labels.
+
+Presentation is completed via the plt.tight_layout command, a title is added and the plot is saved to the folder.
+
+``` Python
+fig, axes = plt.subplots(2, 2, figsize=(10, 10))
+
+i=0
+ax00 = axes[0][0]
+ax01 = axes[0][1]
+ax10 = axes[1][0]
+ax11 = axes[1][1]
+
+for ax in [ax00, ax01, ax10, ax11]:
+
+    g = sns.boxplot(x="species", y=dfCols[i], data=df, ax=ax)
+    g.set_ylabel(dfLabels[i])
+    i+=1
+
+plt.tight_layout(rect=[0, 0, 1, 0.95])
+plt.suptitle("Box & Whisker Plots by Attribute", fontsize = 20)
+plt.savefig("iris_boxplot.png")
+```
+
+The plots generated are shown below:
 
 ![Box & Whisker Plots](iris_boxplot.png)
 
-The plots shown above are separated by species. IT can clearly be seen that there is little or no overlap between measurements fro setosa as compared to the other two species.
+The plots shown above are separated by species. It can clearly be seen that there is little or no overlap between measurements fro setosa as compared to the other two species.
 
 #### Violin Plots
 
@@ -337,6 +533,30 @@ Violin plots are similar to box & whisker plots but with the addition of showing
 - The upper and lower quartile are shown as the extents of a thicker dark line
 - The median is a white dot at the centre of the quartile marker line
 
+Generation of the vioolin plots is carried out almost identically to that of the boxplots, with the sns.violinplot command replacing the sns.boxplot command.
+
+``` Python
+fig, axes = plt.subplots(2, 2, figsize=(10, 10))
+
+i=0
+ax00 = axes[0][0]
+ax01 = axes[0][1]
+ax10 = axes[1][0]
+ax11 = axes[1][1]
+
+for ax in [ax00, ax01, ax10, ax11]:
+
+    g = sns.violinplot(x="species", y=dfCols[i], data=df, ax=ax)
+    g.set_ylabel(dfLabels[i])
+    i+=1
+
+plt.tight_layout(rect=[0, 0, 1, 0.95])
+plt.suptitle("Violin Plots by Attribute", fontsize = 20)
+plt.savefig("iris_violin.png")
+```
+
+The plots generated are shown below:
+
 ![Violin Plots](iris_violin.png)
 
 The violin plot is a slightly more complex concept than a box & whisker plot to understand, however it has the obvious advantage of displaying all of the same data as well as the KDE.
@@ -345,6 +565,36 @@ The violin plot is a slightly more complex concept than a box & whisker plot to 
 
 This plot is a side-by-side comparison of box & whisker plots with violin plots.
 The box & whisker plots have additionally been overlaid with swarm plots to enhance demonstration of the data distribution.
+
+Similar to the previous plots, an "axes-level" Seaborn plot is used to created the plots. The "for loop" creates two objects:
+
+- g: holding the boxplot and swarmplot
+- h: holding the violinplot
+
+Some additional commands are used to move the axis label and tick labels fo the violin plots to the right hand side of the plot.
+
+``` Python
+fig, axes = plt.subplots(4, 2, sharex=False, sharey=False, figsize=(10, 10))
+
+i=0
+
+for i in range(n):
+
+    g = sns.boxplot(y="species", x=dfCols[i], data=df, ax=axes[i, 0])
+    g = sns.swarmplot(y="species", x=dfCols[i], alpha=0.5, size=3, marker="D", color="red", data=df, ax=axes[i, 0])
+    h = sns.violinplot(y="species", x=dfCols[i], inner="quartile", data=df, ax=axes[i, 1])
+    g.set_xlabel(dfLabels[i])
+    h.set_xlabel(dfLabels[i])
+    h.yaxis.set_label_position("right")
+    h.tick_params(length=0)
+    h.yaxis.set_ticks_position("right")
+
+plt.tight_layout(rect=[0, 0, 1, 0.95])
+plt.suptitle("Box & Whisker (with Swarm) Plots and Violin Plots Compared", fontsize = 20)
+plt.savefig("iris_box_violin.png")
+```
+
+The side-by-side comparison plots generated are shown below:
 
 ![Box & Whisker vs Violin Plots](iris_box_violin.png)
 
@@ -357,17 +607,72 @@ The violin plots are (subjectively) aesthetically preferable to their counterpar
 A set of histograms (by species) for each attribute is shown.
 The histogram displays the frequency of each measured values appearance in the data set. These are also overlaid with a line representing a KDE plot.
 
+This is again implemented as an "axes-level" plot in Seaborn. The distplot command provides a flexible approach to generation histograms.
+The "for loop" creates an object "g" and then attahced three distplots (one per species) to it. Each also includes a "rugplot" (a one-dimensional scatterplot) and a the KDE (default behaviour). To aid labelling, each distplot is given a label, these are called to the figlegend (figure legend) created using the get_legend_handles_labels command. This analyses the distplot generated on the final iteration of the loop and extracts the labels it includes in order to build a legend for the figure as an alternative to individually adding legends to the subplots.
+
+``` Python
+fig, axes = plt.subplots(4, 1, sharex=False, sharey=False, figsize=(10, 10))
+
+i=0
+
+for i in range(n):
+    g = sns.distplot(setosaSet[dfCols[i]], rug=True, label='Setosa', ax=axes[i])
+    g = sns.distplot(versiSet[dfCols[i]], rug=True, label='Versicolor', ax=axes[i])
+    g = sns.distplot(virgiSet[dfCols[i]], rug=True, label='Virginica', ax=axes[i])
+    g.set_xlabel(dfLabels[i]) 
+
+plt.tight_layout(rect=[0, 0, 1, 0.92])
+plt.suptitle("Histograms for Each Variable, by Species", fontsize = 20)
+
+handles, labels = g.get_legend_handles_labels()
+plt.figlegend(handles, labels, loc=1)
+plt.savefig("iris_dist.png")
+```
+
 ![Distribution Plots](iris_dist.png)
 
 The contrast between the setosa measurements as compared to those of the other two species can be clearly seen, particularly in relation to petal length and width.
 
 #### Pairgrid
 
-The previous plots examine variables in isolation. The pairgrid function has been used to visualise the relationships between each variable for a particular species.
+The previous plots examine variables in isolation. The pairgrid function has been used to visualise the relationships between each variable for a particular species. This allows much more control and modification to the plot over the simpler pairplot function.
 
 - The upper triangle shows a scatterplot of each combination of variables
 - The diagonals show a histogram (displayed as filed steps) for each variable
 - The lower triangle shows a KDE plot of each combination of variables
+
+To create the plot, a "pairgrid" is created with each species displayed distinctly. g.map_diag, g.map_lower and g.map_upper as used to map the plots listed above to the pairgrid. Some customisation of the appearance is also carried out.
+
+Replacement of the column header labels is more complex than for the previous plots. A dict consisting of the dfLabels list contents keyed to the column headers is created (labelDict). Following this, a for loop cycles through the number of columns and replaces the default labels on the bottom row and left hand column with those in dfLabels.
+
+A legend is added to the right hand side of the figure and it is formatted and saved similarly to the previous plots.
+
+``` Python
+g = sns.PairGrid(df, hue="species")
+
+g = g.map_diag(plt.hist, histtype="stepfilled")
+g = g.map_lower(sns.kdeplot)
+g = g.map_upper(plt.scatter, edgecolor="w", s=30)
+
+labelDict = {'sepal_length': dfLabels[0], 
+        'sepal_width': dfLabels[1], 
+        'petal_length': dfLabels[2], 
+        'petal_width': dfLabels[3]
+        }
+
+i=0
+
+for i in range(n):
+    g.axes[3, i].set_xlabel(dfLabels[i])
+    g.axes[i, 0].set_ylabel(dfLabels[i])
+
+g = g.add_legend()
+plt.tight_layout(rect=[0, 0, 0.90, 0.95])
+plt.suptitle("Pair Plot for Dataset", fontsize = 20)
+plt.savefig("iris_pairgrid.png")
+```
+
+Output plot:
 
 ![Pairgrid Plot](iris_pairgrid.png)
 
@@ -377,29 +682,18 @@ As with the previous plots, setosa can be clearly distinguished from versicolor 
 
 <a name="myfootnote1">1</a>: UCI Machine Learning Repository - Iris Data Set, http://archive.ics.uci.edu/ml/datasets/Iris  
 <a name="myfootnote2">2</a>: The Use of Multiple Measurements in Taxonomic Problems, http://rcs.chemometrics.ru/Tutorials/classification/Fisher.pdf  
-<a name="myfootnote3">3</a>: emerj.com, What is Mschine Learning?, https://emerj.com/ai-glossary-terms/what-is-machine-learning/  
+<a name="myfootnote3">3</a>: emerj.com, What is Machine Learning?, https://emerj.com/ai-glossary-terms/what-is-machine-learning/  
 <a name="myfootnote4">4</a>: A Multithreaded Software Model for Backpropagation Neural Network Applications, 2.4.1 Linear Separability and the XOR Problem, http://www.ece.utep.edu/research/webfuzzy/docs/kk-thesis/kk-thesis-html/node19.html  
 <a name="myfootnote5">5</a>: Exploring the Iris Dataset, https://medium.com/@livingwithdata/exploring-the-iris-dataset-260cc1e5cdf7  
 <a name="myfootnote5">6</a>: Basic Analysis of the Iris Data set Using Python, https://medium.com/codebagng/basic-analysis-of-the-iris-data-set-using-python-2995618a6342  
 <a name="myfootnote5">7</a>: Seaborn plot to visualize Iris data, https://www.kaggle.com/rakesh6184/seaborn-plot-to-visualize-iris-data  
 <a name="myfootnote5">8</a>: Machine Learning with Iris Dataset, https://www.kaggle.com/jchen2186/machine-learning-with-iris-dataset  
-<a name="myfootnote5">9</a>:
-<a name="myfootnote5">10</a>:
-<a name="myfootnote5">11</a>:
-<a name="myfootnote5">12</a>:
-
-
-<sup>[1](#myfootnote1)</sup>
-
-http://www.mvstat.net/tduong/research/seminars/seminar-2001-05/
-https://blog.bioturing.com/2018/05/16/5-reasons-you-should-use-a-violin-graph/
-https://www.britannica.com/science/density-function
-
-(https://towardsdatascience.com/a-guide-to-pandas-and-matplotlib-for-data-exploration-56fad95f951c)
-(https://medium.com/@rayheberer/generating-matplotlib-subplots-programmatically-cc234629b648)
-
-(https://stackoverflow.com/questions/23969619/plotting-with-seaborn-using-the-matplotlib-object-oriented-interface)
-
-
-(https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html)
-(https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.describe.html)
+<a name="myfootnote5">9</a>: Statistics Canada - Variance and Standard Deviation, https://www150.statcan.gc.ca/n1/edu/power-pouvoir/ch12/5214891-eng.htm  
+<a name="myfootnote5">10</a>: NIST - Measures of Skewness and Kurtosis, https://www.itl.nist.gov/div898/handbook/eda/section3/eda35b.htm  
+<a name="myfootnote5">11</a>: An introduction to kernel density estimation, http://www.mvstat.net/tduong/research/seminars/seminar-2001-05/  
+<a name="myfootnote5">12</a>: Pandas - Getting Started in 10 minutes, https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html  
+<a name="myfootnote5">13</a>: Official seaborn tutorial, https://seaborn.pydata.org/tutorial.html  
+<a name="myfootnote5">14</a>: Generating Matplotlib Subplots Programmatically, https://medium.com/@rayheberer/generating-matplotlib-subplots-programmatically-cc234629b648  
+<a name="myfootnote5">15</a>: 5 Reasons You Should Use a Violin Graph, https://blog.bioturing.com/2018/05/16/5-reasons-you-should-use-a-violin-graph/  
+<a name="myfootnote5">16</a>: Plotting with seaborn using the matplotlib object-oriented interface, Stackoverflow, https://stackoverflow.com/questions/23969619/plotting-with-seaborn-using-the-matplotlib-object-oriented-interface  
+<a name="myfootnote5">17</a>: A Guide to Pandas and Matplotlib for Data Exploration, https://towardsdatascience.com/a-guide-to-pandas-and-matplotlib-for-data-exploration-56fad95f951c  

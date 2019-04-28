@@ -5,7 +5,7 @@
 <!-- TOC -->
 - [Introduction](#introduction)
     - [Background](#Background)
-    - [Machine Learning](#Machine Learning)
+    - [Machine Learning](#Machine-Learning)
     - [Literature Review and Interesting Previous Analyses](#Literature-Review-and-Interesting-Previous-Analyses)
     - [Issues and Inconsistencies with Dataset](#Issues-and-Inconsistencies-with-Dataset)
 - [License](#License)
@@ -14,6 +14,7 @@
     - [How to Run](#How-to-Run)
     - [Libraries Used](#Libraries-Used)
     - [Implementation](#Implementation)
+    - [Investigations and Analysis](#Investigations-and-Analysis)
 - [Results](#Results)
     - [Tables](#Tables)
     - [Plots](#Plots)
@@ -41,7 +42,7 @@ iris_pairgrid.png |  Output from iris_visualisation.py - Pairgrid Plot
 
 ### Background
 
-The data analysed by this programme is the "Iris Flower Data Set". R.A. Fisher collated and presented the data set in 1936 in his paper "The Use of Multiple Measurements in Taxonomic Problems". In this paper he studied the use of linear combinations of multiple characterising features of a species to discriminate it from related species. Fisher studied three related species of iris flowers in this paper:
+The data analysed by this programme is the "Iris Flower Data Set"<sup>[1](#myfootnote1)</sup>. R.A. Fisher collated and presented the data set in 1936 in his paper "The Use of Multiple Measurements in Taxonomic Problems"<sup>[2](#myfootnote2)</sup>. In this paper he studied the use of linear combinations of multiple characterising features of a species to discriminate it from related species. Fisher studied three related species of iris flowers in this paper:
 
 - Iris setosa
 - Iris versicolor
@@ -58,14 +59,19 @@ Fisher studied four characteristics of each species:
 
 ### Machine Learning
 
-****What is machine learning??????****
+Emerj.com defines "machine learning" as:
+>[T]he science of getting computers to learn and act like humans do, and improve their learning over time in autonomous fashion, by feeding them data and information in the form of observations and real-world interactions.<sup>[3](#myfootnote3)</sup>
 
-The data set has several characteristics that render it useful for machine learning applications:
+In the context of this project, we can state that machine learning involves the development of algorithms that can allow software to be trained (using training data) to recognise and classify data from real-world sources.
+
+The data set has several characteristics that render it useful for machine learning applications, including but limited to the following:
 
 - The Iris-setosa class is linearly separable from the other classes
 - The Iris-versicolor and Iris-virginica classes are not linearly separable from each other
+- It contains only 150 rows and 5 columns, therefore processing time for algorithms is relatively small
+- The data set is made up of real data, made from careful observations by an expert - it has not been synthesised and can therefore be considered a fair representatino of the real world
 
-*****ADD MORE TO THIS****
+Linear separability is an interesting in relation to the dataset, as the setosa observations can be easily distinguished from the versicolor and virginica observations<sup>[4](#myfootnote4)</sup>.
 
 ### Literature Review and Interesting Previous Analyses
 
@@ -77,7 +83,7 @@ A great many examples of analysis using the Iris Flower Data Set can be found on
 
 ### Issues and Inconsistencies with Dataset
 
-It is noted that there are three inconsistencies between the data set sourced from  [UCI](http://archive.ics.uci.edu/ml/datasets/Iris) and the dataset presented by [Fisher](http://rcs.chemometrics.ru/Tutorials/classification/Fisher.pdf):
+It is noted that there are three inconsistencies between the data set sourced from  UCI<sup>[1](#myfootnote1)</sup> and the dataset presented by Fisher<sup>[2](#myfootnote2)</sup>
 
 1. 35th sample: the fourth feature is given as "0.1" where Fisher had originally given "0.2".
 2. 38th sample: the second feature is given as "3.1" where Fisher had originally given "3.6".
@@ -117,15 +123,23 @@ Once the correct version of Python has been installed, running either of the inc
 
 ### Libraries Used
 
-- [Numpy](https://www.numpy.org/) - Used for a number of mathematical functions in the [iris_analysis.py](iris_analysis.py) programme. 
-- [Scipy](https://www.scipy.org/) - Used for certain statistical analysis functions in the [iris_analysis.py](iris_analysis.py) programme. 
--[Pandas](https://pandas.pydata.org/) - Used for import, management, analysis and manipulation of data in the [iris_analysis.py](iris_analysis.py) and the [iris_visualisation.py](iris_visualisation.py) programme. 
-- [Matplotlib.pyplot](https://matplotlib.org/tutorials/introductory/pyplot.html) - Used for manipulation of elements of certain plots in the [iris_visualisation.py](iris_visualisation.py) programme.
+- [Numpy](https://www.numpy.org/) - Used for a number of mathematical functions in the [iris_analysis.py](iris_analysis.py) programme;
+- [Scipy](https://www.scipy.org/) - Used for certain statistical analysis functions in the [iris_analysis.py](iris_analysis.py) programme;
+- [Pandas](https://pandas.pydata.org/) - Used for import, management, analysis and manipulation of data in the [iris_analysis.py](iris_analysis.py) and the [iris_visualisation.py](iris_visualisation.py) programme;
+- [Matplotlib.pyplot](https://matplotlib.org/tutorials/introductory/pyplot.html) - Used for manipulation of elements of certain plots in the [iris_visualisation.py](iris_visualisation.py) programme;
 - [Seaborn](https://seaborn.pydata.org/) - Used for creation and manipulation of all plots in the [iris_visualisation.py](iris_visualisation.py) programme. Seaborn extends the functionality of Matplotlib.
 
 Please note that the programmes will not run successfuly if their required libraries are not installed.
 
 ### Implementation
+
+Two separate python programmes have been written for investigation of the data set. These are discussed below.
+
+[iris_analysis.py](iris_analysis.py): This 
+
+
+[iris_visualisation.py](iris_visualisation.py: This
+
 
 ### Investigations and Analysis
 
@@ -143,11 +157,11 @@ Please note that the programmes will not run successfuly if their required libra
 
 ## References
 
-<a name="myfootnote1">1</a>: UCI Machine Learning Repository - Iris Data Set, http://archive.ics.uci.edu/ml/datasets/Iris,
-<a name="myfootnote1">2</a>: The Use of Multiple Measurements in Taxonomic Problems, http://rcs.chemometrics.ru/Tutorials/classification/Fisher.pdf,
-<a name="myfootnote1">3</a>:
-<a name="myfootnote1">4</a>:
-<a name="myfootnote1">5</a>:
+<a name="myfootnote1">1</a>: UCI Machine Learning Repository - Iris Data Set, http://archive.ics.uci.edu/ml/datasets/Iris  
+<a name="myfootnote2">2</a>: The Use of Multiple Measurements in Taxonomic Problems, http://rcs.chemometrics.ru/Tutorials/classification/Fisher.pdf  
+<a name="myfootnote3">3</a>: emerj.com, What is MAchine Learning?, https://emerj.com/ai-glossary-terms/what-is-machine-learning/  
+<a name="myfootnote4">4</a>: A Multithreaded Software Model for Backpropagation Neural Network Applications, 2.4.1 Linear Separability and the XOR Problem, http://www.ece.utep.edu/research/webfuzzy/docs/kk-thesis/kk-thesis-html/node19.html  
+<a name="myfootnote5">5</a>:  
 
 
 

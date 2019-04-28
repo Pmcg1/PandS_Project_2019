@@ -233,7 +233,7 @@ print(df.info(verbose=True, memory_usage=False, null_counts=False),'\n')
 ```
 
 Output:
-```
+
 Information about the imported dataset:
 
 <class 'Pandas.core.frame.DataFrame'>|_
@@ -246,7 +246,6 @@ petal_length |   float64
 petal_width  |   float64
 species      |   object
 dtypes: | float64(4), object(1)None
-```
 
 ##### Records for Each Species
 
@@ -259,14 +258,12 @@ print(df['species'].value_counts(),'\n')
 
 Output:
 
-```
 Records for each species:|_
 -----------|-----
 virginica  |  50
 versicolor |   50
 setosa     |   50
 Name: species, dtype: int64
-```
 
 ##### Sample of Data (Head)
 
@@ -279,7 +276,6 @@ print(df.head(n=5),'\n')
 
 Output table:
 
-```
 Sample of data (First 5 records):
 
 _   | sepal_length | sepal_width | petal_length | petal_width | species
@@ -289,7 +285,6 @@ _   | sepal_length | sepal_width | petal_length | petal_width | species
 2   |     4.7      |     3.2     |     1.3      |     0.2     | setosa
 3   |     4.6      |     3.1     |     1.5      |     0.2     | setosa
 4   |     5.0      |     3.6     |     1.4      |     0.2     | setosa
-```
 
 ##### Sample of Data (Random)
 
@@ -302,7 +297,6 @@ print(df.sample(n=5),'\n')
 
 Output table:
 
-```
 Sample of data (Random 5 records):
 
 _   | sepal_length | sepal_width | petal_length | petal_width | species
@@ -312,7 +306,6 @@ _   | sepal_length | sepal_width | petal_length | petal_width | species
 126 |     6.2      |     2.8     |     4.8      |     1.8     | virginica
 127 |     6.1      |     3.0     |     4.9      |     1.8     | virginica
 2   |     4.7      |     3.2     |     1.3      |     0.2     | setosa
-```
 
 #### Statistical Analysis
 
@@ -327,7 +320,6 @@ print(round(df.describe(percentiles=[]),3),'\n')
 
 This outputs the following table:
 
-```
 Summary statistics for the dataset
 
 _           | sepal_length | sepal_width | petal_length | petal_width
@@ -338,7 +330,6 @@ std         |     0.828    |     0.434   |     1.764    |     0.763
 min         |     4.300    |     2.000   |     1.000    |     0.100
 50%         |     5.800    |     3.000   |     4.350    |     1.300
 max         |     7.900    |     4.400   |     6.900    |     2.500
-```
 
 ##### Statistics for Each Species
 
@@ -395,7 +386,6 @@ for i in speciesList:
 
 The three output tables are as follows:
 
-```
 Detailed statistical analysis for species: setosa
 
 _           | sepal_length | sepal_width | petal_length | petal_width
@@ -409,9 +399,7 @@ StDev       |    0.349     |   0.377     |    0.172     |   0.106
 Range       |      1.5     |     2.1     |      0.9     |     0.5  
 Skewness    |    0.116     |   0.104     |     0.07     |   1.161  
 Kurtosis    |   -0.346     |   0.685     |    0.814     |   1.296  
-```
 
-```
 Detailed statistical analysis for species: versicolor
 
 _           | sepal_length | sepal_width | petal_length | petal_width
@@ -425,9 +413,7 @@ StDev       |    0.511     |   0.311     |    0.465     |   0.196
 Range       |      2.1     |     1.4     |      2.1     |     0.8  
 Skewness    |    0.102     |  -0.352     |   -0.588     |   -0.03  
 Kurtosis    |   -0.599     |  -0.448     |   -0.074     |  -0.488  
-```
 
-```
 Detailed statistical analysis for species: virginica  
 
 _           | sepal_length | sepal_width | petal_length | petal_width
@@ -441,7 +427,6 @@ StDev       |    0.629     |   0.319     |    0.546     |   0.272
 Range       |        3     |     1.6     |      2.4     |     1.1  
 Skewness    |    0.114     |   0.355     |    0.533     |  -0.126  
 Kurtosis    |   -0.088     |    0.52     |   -0.256     |  -0.661  
-```
 
 ### Plots
 

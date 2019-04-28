@@ -160,15 +160,17 @@ Once the correct version of Python has been installed, running either of the inc
 1. Open a command prompt (cmd) or equivalent on your PC. The alternative "cmder" programme ([available here](https://cmder.net/)) is recommended.
 2. Navigate to the drive that the programme is on by typing the drive letter followed by :.
 3. Navigate to the correct folder using the "cd" command.
-4. Run the programme by typing the following:
+4. Run the programme by typing the following at the command prompt:
 
-> python <programme_name.py>
+```
+python <programme_name.py>
+```
 
 ### Libraries Used
 
 - [Numpy](https://www.numpy.org/) - Used for a number of mathematical functions in the [iris_analysis.py](iris_analysis.py) programme;
 - [Scipy](https://www.scipy.org/) - Used for certain statistical analysis functions in the [iris_analysis.py](iris_analysis.py) programme;
-- [Pandas](https://Pandas.pydata.org/) - Used for import, management, analysis and manipulation of data in the [iris_analysis.py](iris_analysis.py) and the [iris_visualisation.py](iris_visualisation.py) programme;
+- [Pandas](https://Pandas.pydata.org/) - Used for import, management, analysis and manipulation of data in the [iris_analysis.py](iris_analysis.py) and the [iris_visualisation.py](iris_visualisation.py) programmes;
 - [Matplotlib.pyplot](https://matplotlib.org/tutorials/introductory/pyplot.html) - Used for manipulation of elements of certain plots in the [iris_visualisation.py](iris_visualisation.py) programme;
 - [Seaborn](https://seaborn.pydata.org/) - Used for creation and manipulation of all plots in the [iris_visualisation.py](iris_visualisation.py) programme. Seaborn extends the functionality of Matplotlib.
 
@@ -434,7 +436,7 @@ This section referes primarily to the programme [iris_visualisation.py](iris_vis
 
 All plots are saved to the folder that this programme is stored in, in .png format. Please take care when generating plots as any existing plots in the folder will be overwritten.
 
-To avoid repetition and hard-coding, all plots are generated via "for loop"s.
+To avoid repetition and hard-coding, all plots are generated via "for loops".
 
 #### Data Preparation
 
@@ -482,7 +484,7 @@ Additionally, outliers (if present) can be shown by points beyond the extreme va
 The limitation of this type of plot is that it does not show the Kernal Density Estimate (KDE)<sup>[11](#myfootnote11)</sup> of observations.
 
 This is generated via an "axes-level" plot in Seaborn. The format is 2x2 to display each variable in a square grid.
-A "for loop" cycles through the axes (explicitly declared), creates a boxplot for the variable and labels it appropriately from the dfLabels list. An object-oriented approach "g = " is used in creation of each boxplot for ease of use in attaching labels.
+A "for loop" cycles through the axes (explicitly declared), creates a boxplot for the variable and labels it appropriately from the dfLabels list. An object-oriented approach (g = ) is used in creation of each boxplot for ease of use in attaching labels.
 
 Presentation is completed via the plt.tight_layout command, a title is added and the plot is saved to the folder.
 
@@ -510,7 +512,7 @@ The plots generated are shown below:
 
 ![Box & Whisker Plots](iris_boxplot.png)
 
-The plots shown above are separated by species. It can clearly be seen that there is little or no overlap between measurements fro setosa as compared to the other two species.
+The plots shown above are separated by species. It can clearly be seen that there is little or no overlap between measurements for setosa as compared to the other two species.
 
 #### Violin Plots
 
@@ -596,7 +598,7 @@ A set of histograms (by species) for each attribute is shown.
 The histogram displays the frequency of each measured values appearance in the data set. These are also overlaid with a line representing a KDE plot.
 
 This is again implemented as an "axes-level" plot in Seaborn. The distplot command provides a flexible approach to generation histograms.
-The "for loop" creates an object "g" and then attahced three distplots (one per species) to it. Each also includes a "rugplot" (a one-dimensional scatterplot) and a the KDE (default behaviour). To aid labelling, each distplot is given a label, these are called to the figlegend (figure legend) created using the get_legend_handles_labels command. This analyses the distplot generated on the final iteration of the loop and extracts the labels it includes in order to build a legend for the figure as an alternative to individually adding legends to the subplots.
+The "for loop" creates an object "g" and then attached three distplots (one per species) to it. Each also includes a "rugplot" (a one-dimensional scatterplot) and a the KDE (default behaviour). To aid labelling, each distplot is given a label, these are called to the figlegend (figure legend) created using the get_legend_handles_labels command. This analyses the distplot generated on the final iteration of the loop and extracts the labels it includes in order to build a legend for the figure as an alternative to individually adding legends to the subplots.
 
 ``` Python
 fig, axes = plt.subplots(4, 1, sharex=False, sharey=False, figsize=(10, 10))

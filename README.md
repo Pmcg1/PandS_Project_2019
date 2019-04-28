@@ -291,7 +291,7 @@ Two separate python programmes have been written for investigation of the data s
 ##### Statistics for Virginica  
 
 >Detailed statistical analysis for species: virginica  
->|            | sepal_length | sepal_width | petal_length | petal_width |
+>|_           | sepal_length | sepal_width | petal_length | petal_width |
 >|----------- | ------------ | ----------- | ------------ | ----------- |
 >|Min         |      4.9     |     2.2     |      4.5     |     1.4     |
 >|Max         |      7.9     |     3.8     |      6.9     |     2.5     |

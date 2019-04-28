@@ -189,11 +189,30 @@ Two separate python programmes have been written for investigation of the data s
 
 ### Plots
 
-- ![Box & Whisker Plots](iris_boxplt.png)
-- Violin Plots
-- Box & Whisker Plots vs Violin Plots
-- Histograms
-- Pairgrid
+#### Box & Whisker Plots
+
+![Box & Whisker Plots](iris_boxplot.png)
+
+
+#### Violin Plots
+
+![Violin Plots](iris_violin.png)
+
+
+#### Box & Whisker Plots vs Violin Plots
+
+![Box & Whisker vs Violin Plots](iris_box_violin.png)
+
+
+#### Histograms
+
+![Distribution Plots](iris_dist.png)
+
+
+#### Pairgrid
+
+![Pairgrid Plot](iris_pairgrid.png)
+
 
 ## References
 

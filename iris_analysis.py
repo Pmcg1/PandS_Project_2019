@@ -3,7 +3,8 @@
 
 # Analysis of Iris Dataset
 
-# Import numpy, scipy.stats and pandas for analysis
+# Import pandas for managing data
+# Import numpy and scipy.stats for analysis
 import numpy as np
 from scipy import stats
 import pandas as pd
@@ -31,6 +32,7 @@ print(df.head(n=5),'\n') # pandas.DataFrame.head with the number set to 5, to sh
 print('Sample of data (Random 5 records):')
 print(df.sample(n=5),'\n') # pandas.DataFrame.sample with the number set to 5, to show a random 5 records as a sample of the dataset
 
+# Statistical Analysis of overall Dataset
 print("Summary statistics for the dataset:")
 print(round(df.describe(percentiles=[]),3),'\n') # Summary statistics, rounded to 3 decimal places
 

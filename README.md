@@ -190,55 +190,58 @@ Two separate python programmes have been written for investigation of the data s
 #### Data and Tables Output
 
 ##### Unique Species
->Species included in this dataset are:
->*  setosa
->*  versicolor
->*  virginica
+Species included in this dataset are:
+*  setosa
+*  versicolor
+*  virginica
 
 ##### Dataset Info
 
->Information about the imported dataset:
-><class 'pandas.core.frame.DataFrame'>|_
->------------|---------------
->RangeIndex: | 150 entries, 0 to 149
->Data columns | (total 5 columns):
->sepal_length |   float64
->sepal_width  |   float64
->petal_length |   float64
->petal_width  |   float64
->species      |   object
->dtypes: | float64(4), object(1)None
+Information about the imported dataset:
+
+<class 'pandas.core.frame.DataFrame'>|_
+------------|---------------
+RangeIndex: | 150 entries, 0 to 149
+Data columns | (total 5 columns):
+sepal_length |   float64
+sepal_width  |   float64
+petal_length |   float64
+petal_width  |   float64
+species      |   object
+dtypes: | float64(4), object(1)None
 
 ##### Records for Each Species
 
->Records for each species:|_
->-----------|-----
->virginica  |  50
->versicolor |   50
->setosa     |   50
->Name: species, dtype: int64
+Records for each species:|_
+-----------|-----
+virginica  |  50
+versicolor |   50
+setosa     |   50
+Name: species, dtype: int64
 
 ##### Sample of Data (Head)
 
->Sample of data (First 5 records):
->_   | sepal_length | sepal_width | petal_length | petal_width | species
->--- | ------------ | ----------- | ------------ | ----------- | -------
->0   |     5.1      |     3.5     |     1.4      |     0.2     | setosa
->1   |     4.9      |     3.0     |     1.4      |     0.2     | setosa
->2   |     4.7      |     3.2     |     1.3      |     0.2     | setosa
->3   |     4.6      |     3.1     |     1.5      |     0.2     | setosa
->4   |     5.0      |     3.6     |     1.4      |     0.2     | setosa
+Sample of data (First 5 records):
+
+_   | sepal_length | sepal_width | petal_length | petal_width | species
+--- | ------------ | ----------- | ------------ | ----------- | -------
+0   |     5.1      |     3.5     |     1.4      |     0.2     | setosa
+1   |     4.9      |     3.0     |     1.4      |     0.2     | setosa
+2   |     4.7      |     3.2     |     1.3      |     0.2     | setosa
+3   |     4.6      |     3.1     |     1.5      |     0.2     | setosa
+4   |     5.0      |     3.6     |     1.4      |     0.2     | setosa
 
 ##### Sample of Data (Random)
 
->Sample of data (Random 5 records):
->_   | sepal_length | sepal_width | petal_length | petal_width | species
->--- | ------------ | ----------- | ------------ | ----------- | -------
->129 |     7.2      |     3.0     |     5.8      |     1.6     | virginica
->74  |     6.4      |     2.9     |     4.3      |     1.3     | versicolor
->126 |     6.2      |     2.8     |     4.8      |     1.8     | virginica
->127 |     6.1      |     3.0     |     4.9      |     1.8     | virginica
->2   |     4.7      |     3.2     |     1.3      |     0.2     | setosa
+Sample of data (Random 5 records):
+
+_   | sepal_length | sepal_width | petal_length | petal_width | species
+--- | ------------ | ----------- | ------------ | ----------- | -------
+129 |     7.2      |     3.0     |     5.8      |     1.6     | virginica
+74  |     6.4      |     2.9     |     4.3      |     1.3     | versicolor
+126 |     6.2      |     2.8     |     4.8      |     1.8     | virginica
+127 |     6.1      |     3.0     |     4.9      |     1.8     | virginica
+2   |     4.7      |     3.2     |     1.3      |     0.2     | setosa
 
 
 
@@ -278,6 +281,7 @@ Kurtosis    |   -0.346     |   0.685     |    0.814     |   1.296
 ##### Statistics for versicolor
 
 Detailed statistical analysis for species: versicolor
+
 _           | sepal_length | sepal_width | petal_length | petal_width
 ----------- | ------------ | ----------- | ------------ | -----------
 Min         |      4.9     |       2     |        3     |       1  

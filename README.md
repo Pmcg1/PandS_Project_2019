@@ -178,7 +178,7 @@ Two separate python programmes have been written for investigation of the data s
 [iris_analysis.py](iris_analysis.py): This 
 
 
-[iris_visualisation.py](iris_visualisation.py: This
+[iris_visualisation.py](iris_visualisation.py): This
 
 
 ### Investigations and Analysis
@@ -187,32 +187,184 @@ Two separate python programmes have been written for investigation of the data s
 
 ### Tables
 
+#### Data and Tables Output
+
+##### Unique Species
+>Species included in this dataset are:
+>*  setosa
+>*  versicolor
+>*  virginica
+
+##### Dataset Info
+
+>Information about the imported dataset:
+><class 'pandas.core.frame.DataFrame'>|_
+>------------|---------------
+>RangeIndex: | 150 entries, 0 to 149
+>Data columns | (total 5 columns):
+>sepal_length |   float64
+>sepal_width  |   float64
+>petal_length |   float64
+>petal_width  |   float64
+>species      |   object
+>dtypes: | float64(4), object(1)None
+
+##### Records for Each Species
+
+>Records for each species:|_
+>-----------|-----
+>virginica  |  50
+>versicolor |   50
+>setosa     |   50
+>Name: species, dtype: int64
+
+##### Sample of Data (Head)
+
+>Sample of data (First 5 records):
+>_   | sepal_length | sepal_width | petal_length | petal_width | species
+>--- | ------------ | ----------- | ------------ | ----------- | -------
+>0   |     5.1      |     3.5     |     1.4      |     0.2     | setosa
+>1   |     4.9      |     3.0     |     1.4      |     0.2     | setosa
+>2   |     4.7      |     3.2     |     1.3      |     0.2     | setosa
+>3   |     4.6      |     3.1     |     1.5      |     0.2     | setosa
+>4   |     5.0      |     3.6     |     1.4      |     0.2     | setosa
+
+##### Sample of Data (Random)
+
+>Sample of data (Random 5 records):
+>_   | sepal_length | sepal_width | petal_length | petal_width | species
+>--- | ------------ | ----------- | ------------ | ----------- | -------
+>129 |     7.2      |     3.0     |     5.8      |     1.6     | virginica
+>74  |     6.4      |     2.9     |     4.3      |     1.3     | versicolor
+>126 |     6.2      |     2.8     |     4.8      |     1.8     | virginica
+>127 |     6.1      |     3.0     |     4.9      |     1.8     | virginica
+>2   |     4.7      |     3.2     |     1.3      |     0.2     | setosa
+
+
+
+
+
+#### Statistical Analysis
+
+##### Statistics for Entire Dataset
+
+>Summary statistics for the dataset
+>_           | sepal_length | sepal_width | petal_length | petal_width
+>----------- | ------------ | ----------- | ------------ | -----------
+>count       |   150.000    |   150.000   |   150.000    |   150.000
+>mean        |     5.843    |     3.054   |     3.759    |     1.199
+>std         |     0.828    |     0.434   |     1.764    |     0.763
+>min         |     4.300    |     2.000   |     1.000    |     0.100
+>50%         |     5.800    |     3.000   |     4.350    |     1.300
+>max         |     7.900    |     4.400   |     6.900    |     2.500
+
+##### Statistics for Setosa
+
+>Detailed statistical analysis for species: setosa
+>_           | sepal_length | sepal_width | petal_length | petal_width
+>----------- | ------------ | ----------- | ------------ | -----------
+>Min         |      4.3     |     2.3     |        1     |     0.1  
+>Max         |      5.8     |     4.4     |      1.9     |     0.6  
+>Median      |        5     |     3.4     |      1.5     |     0.2  
+>Mean        |    5.006     |   3.418     |    1.464     |   0.244  
+>Variance    |    0.122     |   0.142     |     0.03     |   0.011  
+>StDev       |    0.349     |   0.377     |    0.172     |   0.106  
+>Range       |      1.5     |     2.1     |      0.9     |     0.5  
+>Skewness    |    0.116     |   0.104     |     0.07     |   1.161  
+>Kurtosis    |   -0.346     |   0.685     |    0.814     |   1.296  
+
+##### Statistics for Versicolor
+
+>Detailed statistical analysis for species: versicolor
+>_           | sepal_length | sepal_width | petal_length | petal_width
+>----------- | ------------ | ----------- | ------------ | -----------
+>Min         |      4.9     |       2     |        3     |       1  
+>Max         |        7     |     3.4     |      5.1     |     1.8  
+>Median      |      5.9     |     2.8     |     4.35     |     1.3  
+>Mean        |    5.936     |    2.77     |     4.26     |   1.326  
+>Variance    |    0.261     |   0.097     |    0.216     |   0.038  
+>StDev       |    0.511     |   0.311     |    0.465     |   0.196  
+>Range       |      2.1     |     1.4     |      2.1     |     0.8  
+>Skewness    |    0.102     |  -0.352     |   -0.588     |   -0.03  
+>Kurtosis    |   -0.599     |  -0.448     |   -0.074     |  -0.488  
+
+##### Statistics for Virginica  
+
+>Detailed statistical analysis for species: virginica  
+>_           | sepal_length | sepal_width | petal_length | petal_width
+>----------- | ------------ | ----------- | ------------ | -----------
+>Min         |      4.9     |     2.2     |      4.5     |     1.4
+>Max         |      7.9     |     3.8     |      6.9     |     2.5  
+>Median      |      6.5     |       3     |     5.55     |       2  
+>Mean        |    6.588     |   2.974     |    5.552     |   2.026  
+>Variance    |    0.396     |   0.102     |    0.298     |   0.074  
+>StDev       |    0.629     |   0.319     |    0.546     |   0.272  
+>Range       |        3     |     1.6     |      2.4     |     1.1  
+>Skewness    |    0.114     |   0.355     |    0.533     |  -0.126  
+>Kurtosis    |   -0.088     |    0.52     |   -0.256     |  -0.661  
+
 ### Plots
 
 #### Box & Whisker Plots
 
+Box & Whisker plots display a "five number summary" of data as follows:
+
+- Upper quartile and lower quartile are represented by the top and bottom of the filled box
+- Median is shown by a horizontal line through the filled box
+- Lower and upper extremes are displayed as perpendicular lines at the end of the "whiskers" protruding from the box
+
+Additionally, outliers (if present) can be shown by points beyond the extreme value lines.
+
+The limitation of this type of plot is that it does not show the Kernal Density Estimate (KDE) of observations.
+
 ![Box & Whisker Plots](iris_boxplot.png)
 
+The plots shown above are separated by species. IT can clearly be seen that there is little or no overlap between measurements fro setosa as compared to the other two species.
 
 #### Violin Plots
 
+Violin plots are similar to box & whisker plots but with the addition of showing the KDE. The elements of a violin plot are as follows:
+
+- The outer violin shape is a mirrored KDE plot
+- The mean upper and lower extremens are displayed by thin whiskers inside the violin
+- The upper and lower quartile are shown as the extents of a thicker dark line
+- The median is a white dot at the centre of the quartile marker line
+
 ![Violin Plots](iris_violin.png)
 
+The violin plot is a slightly more complex concept than a box & whisker plot to understand, however it has the obvious advantage of displaying all of the same data as well as the KDE.
 
 #### Box & Whisker Plots vs Violin Plots
 
+This plot is a side-by-side comparison of box & whisker plots with violin plots.
+The box & whisker plots have additionally been overlaid with swarm plots to enhance demonstration of the data distribution.
+
 ![Box & Whisker vs Violin Plots](iris_box_violin.png)
 
+Care must be taken in interpretation of the swarm plots - by design the points do not overlap. This can be compared to the violin plots' KDE which is strictly an estimate and will not always encompass all of the swarm plots' points.
+
+The violin plots are (subjectively) aesthetically preferable to their counterparts due to the simple display of rich information.
 
 #### Histograms
 
+A set of histograms (by species) for each attribute is shown.
+The histogram displays the frequency of each measured values appearance in the data set. These are also overlaid with a line representing a KDE plot.
+
 ![Distribution Plots](iris_dist.png)
 
+The contrast between the setosa measurements as compared to those of the other two species can be clearly seen, particularly in relation to petal length and width.
 
 #### Pairgrid
 
+The previous plots examine variables in isolation. The pairgrid function has been used to visualise the relationships between each variable for a particular species.
+
+- The upper triangle shows a scatterplot of each combination of variables
+- The diagonals show a histogram (displayed as filed steps) for each variable
+- The lower triangle shows a KDE plot of each combination of variables
+
 ![Pairgrid Plot](iris_pairgrid.png)
 
+As with the previous plots, setosa can be clearly distinguished from versicolor and virginica from each subplot. This is particularly apparent for the petal ;ength and width. Some significant overlap of the versicolor and virginica data sets can be seen, however it is clear that in many cases it would be possibly to classify new observations as the overlap is not 100%.
 
 ## References
 
@@ -232,7 +384,9 @@ Two separate python programmes have been written for investigation of the data s
 
 <sup>[1](#myfootnote1)</sup>
 
-
+http://www.mvstat.net/tduong/research/seminars/seminar-2001-05/
+https://blog.bioturing.com/2018/05/16/5-reasons-you-should-use-a-violin-graph/
+https://www.britannica.com/science/density-function
 
 (https://towardsdatascience.com/a-guide-to-pandas-and-matplotlib-for-data-exploration-56fad95f951c)
 (https://medium.com/@rayheberer/generating-matplotlib-subplots-programmatically-cc234629b648)

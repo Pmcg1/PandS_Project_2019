@@ -75,15 +75,55 @@ Linear separability is an interesting in relation to the dataset, as the setosa 
 
 ### Literature Review and Interesting Previous Analyses
 
-A great many examples of analysis using the Iris Flower Data Set can be found online. Implementations in Python using various libraries are common, as are examples using other packages such as R.
+A great many examples of analysis using the Iris Flower Data Set can be found online. Implementations in Python using various libraries are common, as are examples using other software packages.
 
+#### Exploring the Iris Dataset - The Data Salaryman
 
-*****ADD MORE TO THIS****
+"The data salaryman" presents an investigation into the data set using R (with the [tidyverse package](https://www.tidyverse.org/)) on Medium<sup>[5](#myfootnote5)</sup>. In addition to discussing the background and useful characteristics of the data set, he presents some basic visualisations (box & whisker plot and scatter plot) and then delves into three different algorithms for automated classification of data based on petal length and petal width:
 
+- Decision Trees (~93% accuracy): Involves development of rules to cleanly divide data;
+- Nearest Neighbour Clustering (>95% accuracy): Clustering of data based on training data;
+- Support Vector Classsification (>95% accuracy): Clustering of data based on training data.
+
+In keeping with the known characteristics of the data set, all algorithms explored had difficulty in distinguishing between the versicolor and virginica datasets in some incidences.
+
+#### Basic Analysis of the Iris Data set Using Python - Oluwasogo Oluwafemi Ogundowole
+
+Oluwasogo Oluwafemi Ogundowole demonstrates the use of pandas for managementn of the iris data set on Medium<sup>[6](#myfootnote6)</sup> and explores the tools of the [scikit-learn package](https://scikit-learn.org/stable/) (sklearn). He provides some basic viaualisations using matplotlib also.
+
+The approach taken is to compare the following algorithms for machine learning:
+
+- Logistic Regression (LR)
+- Linear Discriminant Analysis (LDA)
+- K-Nearest Neighbors (KNN)
+- Classification and Regression Trees (CART)
+- Gaussian Naive Bayes (NB)
+- Support Vector Machines (SVM)
+
+The findings were that the KNN algorithm was most accurate for making predictions, with an accuracy of ~90%. As expected, the setosa class is discriminated from the others 100% of the time.
+
+#### Seaborn plot to visualize Iris data - Rakesh Kumar
+
+Rakesh Kumar's python notebook on Kaggle<sup>[7](#myfootnote7)</sup> explores the use of the Seaborn library for python in visualising the data set.
+
+He presents a range of seaborn plots to highlight characteristics of the data and has provided some inspiration for the visualisations used in this project.
+
+#### Machine Learning with Iris Dataset - Jane Chen
+
+Jane Chen on Kaggle<sup>[8](#myfootnote8)</sup> combines pandas, seaborn and sklearn in visualisation and analysis of the data set. She presents a pairplot and violin plots which demonstrate the characteristics of the data set. Following this she carries out classification of the data using the KNN algorithm. She presents two alternatives for selecetion of a training dataset and a testing dataset:
+
+1. Train and test on the same dataset: 
+    - Not preferred as it doesn't fit with the end goal of predicting previously unseen data
+2. Split the dataset into a training set and a testing set:
+    - Real observations will be used for both testing and training of the algorithm
+    - No observations will appear in both datasets
+    - Accuracy scores can vary depending on data selected
+
+The article further explores the effect of the complexity (k value) used in the KNN algorithm.
 
 ### Issues and Inconsistencies with Dataset
 
-It is noted that there are three inconsistencies between the data set sourced from  UCI<sup>[1](#myfootnote1)</sup> and the dataset presented by Fisher<sup>[2](#myfootnote2)</sup>
+It is noted that there are three inconsistencies between the data set sourced from  UCI<sup>[1](#myfootnote1)</sup> and the data set presented by Fisher<sup>[2](#myfootnote2)</sup>
 
 1. 35th sample: the fourth feature is given as "0.1" where Fisher had originally given "0.2".
 2. 38th sample: the second feature is given as "3.1" where Fisher had originally given "3.6".
@@ -149,7 +189,7 @@ Two separate python programmes have been written for investigation of the data s
 
 ### Plots
 
-- Box & Whisker Plots
+- ![Box & Whisker Plots](iris_boxplt.png)
 - Violin Plots
 - Box & Whisker Plots vs Violin Plots
 - Histograms
@@ -159,21 +199,27 @@ Two separate python programmes have been written for investigation of the data s
 
 <a name="myfootnote1">1</a>: UCI Machine Learning Repository - Iris Data Set, http://archive.ics.uci.edu/ml/datasets/Iris  
 <a name="myfootnote2">2</a>: The Use of Multiple Measurements in Taxonomic Problems, http://rcs.chemometrics.ru/Tutorials/classification/Fisher.pdf  
-<a name="myfootnote3">3</a>: emerj.com, What is MAchine Learning?, https://emerj.com/ai-glossary-terms/what-is-machine-learning/  
+<a name="myfootnote3">3</a>: emerj.com, What is Mschine Learning?, https://emerj.com/ai-glossary-terms/what-is-machine-learning/  
 <a name="myfootnote4">4</a>: A Multithreaded Software Model for Backpropagation Neural Network Applications, 2.4.1 Linear Separability and the XOR Problem, http://www.ece.utep.edu/research/webfuzzy/docs/kk-thesis/kk-thesis-html/node19.html  
-<a name="myfootnote5">5</a>:  
-
+<a name="myfootnote5">5</a>: Exploring the Iris Dataset, https://medium.com/@livingwithdata/exploring-the-iris-dataset-260cc1e5cdf7  
+<a name="myfootnote5">6</a>: Basic Analysis of the Iris Data set Using Python, https://medium.com/codebagng/basic-analysis-of-the-iris-data-set-using-python-2995618a6342  
+<a name="myfootnote5">7</a>: Seaborn plot to visualize Iris data, https://www.kaggle.com/rakesh6184/seaborn-plot-to-visualize-iris-data  
+<a name="myfootnote5">8</a>: Machine Learning with Iris Dataset, https://www.kaggle.com/jchen2186/machine-learning-with-iris-dataset  
+<a name="myfootnote5">9</a>:
+<a name="myfootnote5">10</a>:
+<a name="myfootnote5">11</a>:
+<a name="myfootnote5">12</a>:
 
 
 <sup>[1](#myfootnote1)</sup>
 
-(https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html)
-(https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.describe.html)
-(https://medium.com/@livingwithdata/exploring-the-iris-dataset-260cc1e5cdf7)
-(https://www.kaggle.com/jchen2186/machine-learning-with-iris-dataset)
-(https://medium.com/codebagng/basic-analysis-of-the-iris-data-set-using-python-2995618a6342)
+
+
 (https://towardsdatascience.com/a-guide-to-pandas-and-matplotlib-for-data-exploration-56fad95f951c)
 (https://medium.com/@rayheberer/generating-matplotlib-subplots-programmatically-cc234629b648)
-(https://www.kaggle.com/rakesh6184/seaborn-plot-to-visualize-iris-data)
+
 (https://stackoverflow.com/questions/23969619/plotting-with-seaborn-using-the-matplotlib-object-oriented-interface)
-(http://www.ece.utep.edu/research/webfuzzy/docs/kk-thesis/kk-thesis-html/node19.html)
+
+
+(https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html)
+(https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.describe.html)

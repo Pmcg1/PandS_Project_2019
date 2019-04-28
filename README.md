@@ -248,46 +248,47 @@ Two separate python programmes have been written for investigation of the data s
 
 ##### Statistics for Entire Dataset
 
->Summary statistics for the dataset
->_           | sepal_length | sepal_width | petal_length | petal_width
->----------- | ------------ | ----------- | ------------ | -----------
->count       |   150.000    |   150.000   |   150.000    |   150.000
->mean        |     5.843    |     3.054   |     3.759    |     1.199
->std         |     0.828    |     0.434   |     1.764    |     0.763
->min         |     4.300    |     2.000   |     1.000    |     0.100
->50%         |     5.800    |     3.000   |     4.350    |     1.300
->max         |     7.900    |     4.400   |     6.900    |     2.500
+Summary statistics for the dataset
+
+_           | sepal_length | sepal_width | petal_length | petal_width
+----------- | ------------ | ----------- | ------------ | -----------
+count       |   150.000    |   150.000   |   150.000    |   150.000
+mean        |     5.843    |     3.054   |     3.759    |     1.199
+std         |     0.828    |     0.434   |     1.764    |     0.763
+min         |     4.300    |     2.000   |     1.000    |     0.100
+50%         |     5.800    |     3.000   |     4.350    |     1.300
+max         |     7.900    |     4.400   |     6.900    |     2.500
 
 ##### Statistics for Setosa
 
->Detailed statistical analysis for species: setosa
->_           | sepal_length | sepal_width | petal_length | petal_width
->----------- | ------------ | ----------- | ------------ | -----------
->Min         |      4.3     |     2.3     |        1     |     0.1  
->Max         |      5.8     |     4.4     |      1.9     |     0.6  
->Median      |        5     |     3.4     |      1.5     |     0.2  
->Mean        |    5.006     |   3.418     |    1.464     |   0.244  
->Variance    |    0.122     |   0.142     |     0.03     |   0.011  
->StDev       |    0.349     |   0.377     |    0.172     |   0.106  
->Range       |      1.5     |     2.1     |      0.9     |     0.5  
->Skewness    |    0.116     |   0.104     |     0.07     |   1.161  
->Kurtosis    |   -0.346     |   0.685     |    0.814     |   1.296  
+Detailed statistical analysis for species: setosa
+
+_           | sepal_length | sepal_width | petal_length | petal_width
+----------- | ------------ | ----------- | ------------ | -----------
+Min         |      4.3     |     2.3     |        1     |     0.1  
+Max         |      5.8     |     4.4     |      1.9     |     0.6  
+Median      |        5     |     3.4     |      1.5     |     0.2  
+Mean        |    5.006     |   3.418     |    1.464     |   0.244  
+Variance    |    0.122     |   0.142     |     0.03     |   0.011  
+StDev       |    0.349     |   0.377     |    0.172     |   0.106  
+Range       |      1.5     |     2.1     |      0.9     |     0.5  
+Skewness    |    0.116     |   0.104     |     0.07     |   1.161  
+Kurtosis    |   -0.346     |   0.685     |    0.814     |   1.296  
 
 ##### Statistics for versicolor
 
->Detailed statistical analysis for species: versicolor
-
->_           | sepal_length | sepal_width | petal_length | petal_width
->----------- | ------------ | ----------- | ------------ | -----------
->Min         |      4.9     |       2     |        3     |       1  
->Max         |        7     |     3.4     |      5.1     |     1.8  
->Median      |      5.9     |     2.8     |     4.35     |     1.3  
->Mean        |    5.936     |    2.77     |     4.26     |   1.326  
->Variance    |    0.261     |   0.097     |    0.216     |   0.038  
->StDev       |    0.511     |   0.311     |    0.465     |   0.196  
->Range       |      2.1     |     1.4     |      2.1     |     0.8  
->Skewness    |    0.102     |  -0.352     |   -0.588     |   -0.03  
->Kurtosis    |   -0.599     |  -0.448     |   -0.074     |  -0.488  
+Detailed statistical analysis for species: versicolor
+_           | sepal_length | sepal_width | petal_length | petal_width
+----------- | ------------ | ----------- | ------------ | -----------
+Min         |      4.9     |       2     |        3     |       1  
+Max         |        7     |     3.4     |      5.1     |     1.8  
+Median      |      5.9     |     2.8     |     4.35     |     1.3  
+Mean        |    5.936     |    2.77     |     4.26     |   1.326  
+Variance    |    0.261     |   0.097     |    0.216     |   0.038  
+StDev       |    0.511     |   0.311     |    0.465     |   0.196  
+Range       |      2.1     |     1.4     |      2.1     |     0.8  
+Skewness    |    0.102     |  -0.352     |   -0.588     |   -0.03  
+Kurtosis    |   -0.599     |  -0.448     |   -0.074     |  -0.488  
 
 ##### Statistics for Virginica  
 

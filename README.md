@@ -18,7 +18,9 @@
 - [Results](#Results)
     - [Data and Tables Output](#Data-and-Tables-Output)
     - [Plots](#Plots)
-- [Conclusions](#Conclusions)   
+- [Conclusions](#Conclusions)
+    - [General](#General)
+    - [Python](#Python)
 - [References](#References)
 <!-- /TOC -->  
 
@@ -90,7 +92,7 @@ In keeping with the known characteristics of the data set, all algorithms explor
 
 #### Basic Analysis of the Iris Data set Using Python - Oluwasogo Oluwafemi Ogundowole
 
-Oluwasogo Oluwafemi Ogundowole demonstrates the use of pandas for management of the iris data set on Medium<sup>[6](#myfootnote6)</sup> and explores the tools of the [scikit-learn package](https://scikit-learn.org/stable/) (sklearn). He provides some basic viaualisations using matplotlib also.
+Oluwasogo Oluwafemi Ogundowole demonstrates the use of Pandas for management of the iris data set on Medium<sup>[6](#myfootnote6)</sup> and explores the tools of the [scikit-learn package](https://scikit-learn.org/stable/) (sklearn). He provides some basic viaualisations using matplotlib also.
 
 The approach taken is to compare the following algorithms for machine learning:
 
@@ -111,7 +113,7 @@ He presents a range of seaborn plots to highlight characteristics of the data an
 
 #### Machine Learning with Iris Dataset - Jane Chen
 
-Jane Chen on Kaggle<sup>[8](#myfootnote8)</sup> combines pandas, seaborn and sklearn in visualisation and analysis of the data set. She presents a pairplot and violin plots which demonstrate the characteristics of the data set. Following this she carries out classification of the data using the KNN algorithm. She presents two alternatives for selecetion of a training dataset and a testing dataset:
+Jane Chen on Kaggle<sup>[8](#myfootnote8)</sup> combines Pandas, seaborn and sklearn in visualisation and analysis of the data set. She presents a pairplot and violin plots which demonstrate the characteristics of the data set. Following this she carries out classification of the data using the KNN algorithm. She presents two alternatives for selecetion of a training dataset and a testing dataset:
 
 1. Train and test on the same dataset: 
     - Not preferred as it doesn't fit with the end goal of predicting previously unseen data
@@ -166,7 +168,7 @@ Once the correct version of Python has been installed, running either of the inc
 
 - [Numpy](https://www.numpy.org/) - Used for a number of mathematical functions in the [iris_analysis.py](iris_analysis.py) programme;
 - [Scipy](https://www.scipy.org/) - Used for certain statistical analysis functions in the [iris_analysis.py](iris_analysis.py) programme;
-- [Pandas](https://pandas.pydata.org/) - Used for import, management, analysis and manipulation of data in the [iris_analysis.py](iris_analysis.py) and the [iris_visualisation.py](iris_visualisation.py) programme;
+- [Pandas](https://Pandas.pydata.org/) - Used for import, management, analysis and manipulation of data in the [iris_analysis.py](iris_analysis.py) and the [iris_visualisation.py](iris_visualisation.py) programme;
 - [Matplotlib.pyplot](https://matplotlib.org/tutorials/introductory/pyplot.html) - Used for manipulation of elements of certain plots in the [iris_visualisation.py](iris_visualisation.py) programme;
 - [Seaborn](https://seaborn.pydata.org/) - Used for creation and manipulation of all plots in the [iris_visualisation.py](iris_visualisation.py) programme. Seaborn extends the functionality of Matplotlib.
 
@@ -189,7 +191,7 @@ This section referes primarily to the programme [iris_analysis.py](iris_analysis
 
 ##### Data Import and Preparation
 
-Pandas is used to import the data from csv (pandas.read_csv), and then convert it to a dataframe.
+Pandas is used to import the data from csv (Pandas.read_csv), and then convert it to a dataframe.
 
 This is implemented as follows:
 
@@ -234,7 +236,7 @@ Output:
 ```
 Information about the imported dataset:
 
-<class 'pandas.core.frame.DataFrame'>|_
+<class 'Pandas.core.frame.DataFrame'>|_
 ------------|---------------
 RangeIndex: | 150 entries, 0 to 149
 Data columns | (total 5 columns):
@@ -268,7 +270,7 @@ Name: species, dtype: int64
 
 ##### Sample of Data (Head)
 
-Two examples of sampling the data and presenting it to the user are used. The first example uses pandas dataframe.head with the count set to 5, to output the first five records in the dataframe.
+Two examples of sampling the data and presenting it to the user are used. The first example uses Pandas dataframe.head with the count set to 5, to output the first five records in the dataframe.
 
 ``` Python
 print('Sample of data (First 5 records):')
@@ -291,7 +293,7 @@ _   | sepal_length | sepal_width | petal_length | petal_width | species
 
 ##### Sample of Data (Random)
 
-Similarly to the previous section, pandas dataframe.sample is used to out a random five records from the dataframe.
+Similarly to the previous section, Pandas dataframe.sample is used to out a random five records from the dataframe.
 
 ``` Python
 print('Sample of data (Random 5 records):')
@@ -681,6 +683,8 @@ As with the previous plots, setosa can be clearly distinguished from versicolor 
 
 ## Conclusions
 
+### General
+
 The statistical analysis carried out is supperted and enhanced by the visualisations generated. This supports the general conclusion of the literature and previous projects studied - the Iris Flower Data Set is a suitable tool for development and training of machine learning algorithms due to its characteristics:
 
 - The setosa class is linearly separable from the others
@@ -689,12 +693,24 @@ The statistical analysis carried out is supperted and enhanced by the visualisat
 
 These characteristics ensure that machine learning algorithms can efficiently be trained and tested with the data set.
 
+### Python
+
+Python is ideal for data analysis and visualisation. Its syntax is simple enough that non-programmers do not have to expend a significant effort in learning the language, and its wide range of available libraries provide a framework to extend its capabilities to many functions.
+
+Numpy and Scipy provide a read-to-use range of numerical and statistical function that remove the need for the user to develop their own.
+
+The Pandas library is an almost essential tool for management of data sets and greatly improves the standard capabilities of python.
+
+Seaborn is an extremely useful visualisation library. It simplifies and extends the functions of Matplotlib (pyplot), making it easier to understand and produce high-quality plots.
+
+The official tutorials available online for Pandas and Seaborn have been used extensively in the development of code for this project.
+
 ## References
 
 <a name="myfootnote1">1</a>: UCI Machine Learning Repository - Iris Data Set, http://archive.ics.uci.edu/ml/datasets/Iris  
 <a name="myfootnote2">2</a>: The Use of Multiple Measurements in Taxonomic Problems, http://rcs.chemometrics.ru/Tutorials/classification/Fisher.pdf  
 <a name="myfootnote3">3</a>: emerj.com, What is Machine Learning?, https://emerj.com/ai-glossary-terms/what-is-machine-learning/  
-<a name="myfootnote4">4</a>: A Multithreaded Software Model for Backpropagation Neural Network Applications, 2.4.1 Linear Separability and the XOR Problem, http://www.ece.utep.edu/research/webfuzzy/docs/kk-thesis/kk-thesis-html/node19.html  
+<a name="myfootnote4">4</a>: A Multithreaded Software Model for Backpropagation Neural Network Applications - 2.4.1 Linear Separability and the XOR Problem, http://www.ece.utep.edu/research/webfuzzy/docs/kk-thesis/kk-thesis-html/node19.html  
 <a name="myfootnote5">5</a>: Exploring the Iris Dataset, https://medium.com/@livingwithdata/exploring-the-iris-dataset-260cc1e5cdf7  
 <a name="myfootnote6">6</a>: Basic Analysis of the Iris Data set Using Python, https://medium.com/codebagng/basic-analysis-of-the-iris-data-set-using-python-2995618a6342  
 <a name="myfootnote7">7</a>: Seaborn plot to visualize Iris data, https://www.kaggle.com/rakesh6184/seaborn-plot-to-visualize-iris-data  
@@ -702,9 +718,12 @@ These characteristics ensure that machine learning algorithms can efficiently be
 <a name="myfootnote9">9</a>: Statistics Canada - Variance and Standard Deviation, https://www150.statcan.gc.ca/n1/edu/power-pouvoir/ch12/5214891-eng.htm  
 <a name="myfootnote10">10</a>: NIST - Measures of Skewness and Kurtosis, https://www.itl.nist.gov/div898/handbook/eda/section3/eda35b.htm  
 <a name="myfootnote11">11</a>: An introduction to kernel density estimation, http://www.mvstat.net/tduong/research/seminars/seminar-2001-05/  
-<a name="myfootnote12">12</a>: Pandas - Getting Started in 10 minutes, https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html  
+<a name="myfootnote12">12</a>: Pandas - Getting Started in 10 minutes, https://Pandas.pydata.org/Pandas-docs/stable/getting_started/10min.html  
 <a name="myfootnote13">13</a>: Official seaborn tutorial, https://seaborn.pydata.org/tutorial.html  
 <a name="myfootnote14">14</a>: Generating Matplotlib Subplots Programmatically, https://medium.com/@rayheberer/generating-matplotlib-subplots-programmatically-cc234629b648  
 <a name="myfootnote15">15</a>: 5 Reasons You Should Use a Violin Graph, https://blog.bioturing.com/2018/05/16/5-reasons-you-should-use-a-violin-graph/  
-<a name="myfootnote16">16</a>: Plotting with seaborn using the matplotlib object-oriented interface, Stackoverflow, https://stackoverflow.com/questions/23969619/plotting-with-seaborn-using-the-matplotlib-object-oriented-interface  
-<a name="myfootnote17">17</a>: A Guide to Pandas and Matplotlib for Data Exploration, https://towardsdatascience.com/a-guide-to-pandas-and-matplotlib-for-data-exploration-56fad95f951c  
+<a name="myfootnote16">16</a>: Plotting with seaborn using the matplotlib object-oriented interface - Stackoverflow, https://stackoverflow.com/questions/23969619/plotting-with-seaborn-using-the-matplotlib-object-oriented-interface  
+<a name="myfootnote17">17</a>: A Guide to Pandas and Matplotlib for Data Exploration, https://towardsdatascience.com/a-guide-to-Pandas-and-matplotlib-for-data-exploration-56fad95f951c  
+<a name="myfootnote17">18</a>: Python for Data Science Cheat Sheet - Seaborn, https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Python_Seaborn_Cheat_Sheet.pdf  
+<a name="myfootnote17">19</a>: Remap values in pandas column with dict - StackOverflow, https://stackoverflow.com/questions/20250771/remap-values-in-pandas-column-with-a-dict  
+<a name="myfootnote17">20</a>: Hacking Seaborn Grid Plots - Catherine's Auxiliary Brain, http://catherineh.github.io/programming/2016/05/24/seaborn-pairgrid-tips  
